@@ -10,8 +10,22 @@ public class CoinExchange {
         int[][] V = new int[amount + 1][d.length];
 
         /* Write down the base solution*/
-        /* Fill in the rest of the matrix using recursion relation */
-
+        for (int j = 0; j < d.length; j++) {
+            V[0][j] = 1 ;
+        }
+        for (int i = 0; i <= amount; i++) {
+            V[i][0] =1;
+        }
+        /* Fill in the rest of the matrix using recursion relation*/
+        for (int j = 1; j < d.length; j++) {
+            for (int i = 1; i <= amount; i++) {
+                if (i>= d[j])
+                    V[i][j] = V[i][j - 1] + V[i - d[j]][j];
+                else
+                    V[i][j] = V[i][j - 1];
+                //System.out.println("i="+i+" j="+j+" val="+V[i][j]);
+            }
+        }
         return V[amount][d.length-1];
     }
 
