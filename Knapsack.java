@@ -1,4 +1,4 @@
-public class check1 {
+public class Knapsack {
     public static void maximumValue(int knapsackSize, int[] weight, int[] value) {
         int nItems = weight.length;
 
@@ -50,8 +50,8 @@ public class check1 {
 
     public static void main(String[] args) {
 
-        int knapsackSize = 7;
-        int[] weights = {2, 1, 3, 2}, values = {12, 10, 21, 15};
+        int knapsackSize = 18;
+        int[] weights = {4, 6, 5, 7, 3, 1, 6 }, values = {12, 10, 8, 11, 14, 7 ,9};
         maximumValue(knapsackSize, weights, values);
     }
 
