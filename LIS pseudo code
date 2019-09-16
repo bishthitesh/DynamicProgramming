@@ -1,0 +1,13 @@
+//pseudocode for the longest increasing subsequence
+
+SET array = sequence of numbers
+SET L[] = array of length N
+FOR i = 0 AND i < length(array)
+  SET L[i] = 1
+FOR i = 1 AND i < length(array)
+  FOR j = 0 AND j < i
+    IF (array[j] < array[i]) AND (L[i] <= L[j])
+      SET L[i] = 1 + L[j]
+  end
+end
+return max element of L[]
